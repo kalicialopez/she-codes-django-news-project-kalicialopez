@@ -16,26 +16,19 @@
     {% else %}
     <img src="{{ user.profile_picture }}" class="profile-card-image"/>
     {% endif %} 
-</div>
+
 
 <p> Profile Picture: <a href="{% url 'users:profile' request.user.id %}">{{ user.profile_picture }}</a></p>
 <p> First name: {{ user.first_name }}</p>
 <p> Last name: {{ user.last_name }}</p>
 <p> Email: <a href="{% url 'users:profile' request.user.id %}">{{ user.email }}</a></p>
 <p> Bio: <a href="{% url 'users:profile' request.user.id %}">{{ user.bio }}</a></p>
-
 <p> Date joined: {{ user.date_joined }}</p>
 
 
+<a href="{% url 'users:editAccount' request.user.id %}">Edit Account</a>
+</div>
 
-<h2>Edit account details</h2>
-<h2>Change password</h2>
-
-
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Change username</button>
-</form>
 
 {% endblock %}
+
