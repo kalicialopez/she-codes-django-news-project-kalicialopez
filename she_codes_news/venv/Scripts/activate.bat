@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\e4083270\Documents\GitHub\she-codes-django-news-project-kalicialopez\she_codes_news\venv
+set VIRTUAL_ENV=C:\Users\e4083270\Documents\github\she-codes-django-news-project-kalicialopez\she_codes_news\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

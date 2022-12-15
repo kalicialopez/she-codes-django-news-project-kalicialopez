@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="profile-wrapper">
+    <h2>{{ user.username|capfirst }}</h2>
+    <img src = she_codes_news\news\static\news\images\profile-avatar.png >
+</div>
+
+<h2>Edit account details</h2>
+<h2>Change password</h2>
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Change username</button>
+</form>
+
+{% endblock %}
