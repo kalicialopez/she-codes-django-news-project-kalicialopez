@@ -29,6 +29,12 @@
 <a href="{% url 'users:editAccount' request.user.id %}">Edit Account</a>
 </div>
 
+<!-- THIS IS NOT WORKING! - TO LIST ALL THE STORIES MADE BY THAT PARTICULAR USER. -->
+<ul>
+{% for story in customuser.story_set.all %}
+    <li>{{ story.title }}</li>
+{% endfor %}
+</ul>
 
 {% endblock %}
 

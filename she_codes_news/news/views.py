@@ -8,7 +8,7 @@ class IndexView(generic.ListView):
     template_name = 'news/index.html'
 
     def get_queryset(self):
-        '''Return all news stories.'''
+        '''Return all news stories and use in index.'''
         return NewsStory.objects.all()
 
     def get_context_data(self, **kwargs):
@@ -37,3 +37,20 @@ class EditStoryView(generic.UpdateView):
     model = NewsStory
     context_object_name = 'storyForm'
     template_name = 'news/createStory.html'
+
+
+# class AuthorStoriesView(generic.DetailView):
+#     model = get_user_model()
+#     template_name = 'news/authorStories'
+#     context_object_name = 'authorStories'
+
+
+# # Sue's Code 
+#     class AuthorStoriesView(ListView):
+#     model = NewsStory
+#     template_name = 'news/profileStory.html'
+#     context_object_name = 'profileStory'
+#     # def get_queryset(self):def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['author_stories'] = NewsStory.objects.filter(author=self.kwargs['pk'])
+#         return context

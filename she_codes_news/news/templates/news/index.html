@@ -12,7 +12,9 @@
 
 <h2>Latest featured recipes</h2>
 
-<a href="{% url 'news:newStory' %}">Submit a new recipe</a>
+{% if user.is_authenticated %}
+  <a href="{% url 'news:newStory' %}">Submit a new recipe</a>
+{% endif %}
 
 <div id="latest-stories">
   {% if latest_stories %} 

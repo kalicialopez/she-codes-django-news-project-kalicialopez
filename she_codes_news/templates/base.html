@@ -18,14 +18,16 @@
     <header>
       <div id="header-text">
         <a id="header-link" href="{% url 'news:index' %}">
-          <h1>She {Codes} News, the Xmas Edition  </h1>
+          <h1>She<span id="">{Codes}</span> News, the Xmas Edition  </h1>
         </a>
       </div>
       <!-- include nav here -->
       {% include './nav.html' %}
     </header>
-
+    <main id="body-styling">
     <!-- content blocks here -->
     {% block content %}{% endblock %}
+    </main>
+    <footer></footer>
   </body>
 </html>
