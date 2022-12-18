@@ -11,11 +11,13 @@
 <div id="story-wrapper">
     <h2>{{ story.title }}</h2>
     <h4>{{ story.author }}</h4>
+    <a href="{% url 'news:authorStories' story.author.id %}">{{ story.author }}</a>
     <div id="story-content">
         <img src="{{story.image_url}}">
         {{ story.content|linebreaks }}
     </div>
 </div>
+
 
 <a href=" {% url 'news:editStory' story.id %}">Edit Story</a>
 {% endblock %}

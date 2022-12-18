@@ -31,7 +31,7 @@
 
 <!-- THIS IS NOT WORKING! - TO LIST ALL THE STORIES MADE BY THAT PARTICULAR USER. -->
 <ul>
-{% for story in customuser.story_set.all %}
+{% for story in CustomUser.story_set.all %}
     <li>{{ story.title }}</li>
 {% endfor %}
 </ul>

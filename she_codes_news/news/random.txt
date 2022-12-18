@@ -1,0 +1,12 @@
+    <!-- <a href="{% url 'news:authorStories' story.author.id %}"> -->
+
+    <div id="AuthorStories">
+    <h2>A snap shot of all recipe's kindly shared by {{ story.author }}</h2>
+    {% if CustomUser.newsstory_set.all %}
+        {% for story in CustomUser.newsstory_set.all %}
+            {% include "news/storyCard.html" with story=story %}
+        {% endfor %}
+    {% else %}
+        <p>No stories are available.</p>
+    % endif %
+</div>
