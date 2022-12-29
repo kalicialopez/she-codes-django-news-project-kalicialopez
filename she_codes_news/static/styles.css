@@ -1,14 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Charmonman:wght@700&display=swap');
+
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #F7F7F9;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #000;
+    border-bottom: 2px solid #FF0000;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    color: #ffffff;
+}
+main {
+    display: block;
+    justify-content: center;
 }
 
 img {
@@ -23,13 +40,17 @@ h1 {
 }
 
 h2 {
-   font-family: 'Montserrat Subrayada', sans-serif; 
+    font-family: 'Charmonman', cursive;
+   color: black; 
+   display: block;
+   font-size: 60px;
 }
 
 h3 {
     font-size: 2rem;
     margin: 0;
-    color: #451C54;
+    color: #FF0000;
+    
 
 }
 
@@ -45,12 +66,28 @@ nav {
     align-items: flex-end;
 }
 
+.navbar a:hover {
+    transition: 0.5s ease;
+    transform: translateX(0%);
+    color: #FF0000;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: underline;
+    letter-spacing: 4px;
+}
+
 a {
     margin: 2px;
     text-decoration: none;
-    color: #451C54;
-    ;
+    color: #8246AF;
 }
+
+a:hover {
+    color: #FF0000;
+    font-weight: 800;
+}
+
+
 
 a, p {
     font-family: 'Trebuchet MS'

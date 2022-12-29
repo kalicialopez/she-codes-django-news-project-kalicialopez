@@ -10,6 +10,8 @@
 
 {% block content %}
 
+<div id="index-styling">
+
 <h2>Latest featured recipes</h2>
 
 {% if user.is_authenticated %}
@@ -34,6 +36,8 @@
   {% endfor %} {% else %}
   <p>No stories are available.</p>
   {% endif %}
+</div>
+
 </div>
 
 {% endblock %}

@@ -16,9 +16,10 @@
   </head>
   <body>
     <header>
-      <div id="header-text">
-        <a id="header-link" href="{% url 'news:index' %}">
-          <h1>She<span id="">{Codes}</span> News, the Xmas Edition  </h1>
+      <div id="header-image">
+        <a href="{% url 'news:index' %}">
+        {% load static %}
+        <img id="logo" src="{% static '\news\images\SheCodes xmas edition 1.png' %}" alt="SheCodes christmas edition logo" />
         </a>
       </div>
       <!-- include nav here -->
