@@ -12,10 +12,10 @@
 
 <div id="index-styling">
 
-<h2>Latest featured recipes</h2>
+<h2 id="index-h2">Latest featured recipes</h2>
 
 {% if user.is_authenticated %}
-  <a href="{% url 'news:newStory' %}">Submit a new recipe</a>
+  <a id="index-createStory-link" href="{% url 'news:newStory' %}">Submit a new recipe</a>
 {% endif %}
 
 <div id="latest-stories">

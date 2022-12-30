@@ -38,7 +38,7 @@ class EditStoryView(generic.UpdateView):
     form_class = StoryForm
     model = NewsStory
     context_object_name = 'storyForm'
-    template_name = 'news/createStory.html'
+    template_name = 'news/editStory.html'
 
 class AuthorStoriesView(generic.ListView):
     model = NewsStory
@@ -47,3 +47,13 @@ class AuthorStoriesView(generic.ListView):
 
     def get_queryset(self):
         return NewsStory.objects.filter(author=self.kwargs['pk'])
+
+class DeleteStoryView(generic.DeleteView):
+    model = NewsStory
+    template_name = 'news/deleteStory.html'
+    success_url = reverse_lazy('news:index')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['story'] = NewsStory.objects.get(id=self.kwargs['pk'])
+        return context

@@ -50,8 +50,6 @@ h3 {
     font-size: 2rem;
     margin: 0;
     color: #FF0000;
-    
-
 }
 
 #header-text {
@@ -87,8 +85,25 @@ a:hover {
     font-weight: 800;
 }
 
-
-
 a, p {
     font-family: 'Trebuchet MS'
 }
+
+#index-h2 {
+    color: #ffffff;
+    margin: 0 0 5px 20px;
+}
+
+#index-createStory-link {
+    color: #ffffff;
+    font-size: 40px;
+    margin-left: 20px;
+}
+
+#index-createStory-link:hover {
+    transition: 0.5s ease;
+    transform: translateX(0%);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+

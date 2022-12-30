@@ -9,21 +9,19 @@
 
 {% block content %}
 
-<div id="createStory-styling">
+<div id="editStory-styling">
 <div id = "form-container">
 
-<h2> Sharing is caring! 
-    <br>
-Submit your favorite recipe</h2>
+<h2>Update your recipe</h2>
+<br/><br/>
     
 <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Publish">
+    <input type="submit" value="Save Changes">
 </form>
 </div>
 
 </div>
 
 {% endblock %}
-
