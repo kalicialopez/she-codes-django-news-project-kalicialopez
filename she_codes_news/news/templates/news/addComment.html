@@ -1,0 +1,26 @@
+
+{% extends "base.html" %} 
+
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<div id="addComment-styling">
+<div id="form-container">
+<form action="" method="post">
+    {% csrf_token %}
+    <h2>Add A Comment</h2>
+    <table>
+        {{ form.as_table }}
+        </table>
+    <button>Add Comment</button>
+</form>
+<a href="{% url 'news:index' %}">Back</a>
+
+</div>
+</div>
+{% endblock %}

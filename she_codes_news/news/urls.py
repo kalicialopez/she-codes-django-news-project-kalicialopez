@@ -10,6 +10,7 @@ urlpatterns = [
     path('edit/<int:pk>/', views.EditStoryView.as_view(), name='editStory'),
     path('author/<int:pk>/', views.AuthorStoriesView.as_view(),name='authorStories'),
     path('delete/<int:pk>/', views.DeleteStoryView.as_view(), name='deleteStory'),
+    path('comment/<int:pk>', views.AddCommentView.as_view(),name='addComment'),
 ]
 
 

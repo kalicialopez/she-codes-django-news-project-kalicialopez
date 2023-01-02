@@ -1,6 +1,9 @@
 from django.contrib import admin
-
-# Register your models here.
+from . import models
 from .models import NewsStory
 
-admin.site.register(NewsStory)
+# Register your models here.
+
+admin.site.register(models.NewsStory)
+
+admin.site.register(models.Comment)

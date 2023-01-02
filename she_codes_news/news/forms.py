@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import NewsStory
+from .models import NewsStory, Comment
 
 class StoryForm(ModelForm):
     class Meta:
@@ -10,3 +10,11 @@ class StoryForm(ModelForm):
         'pub_date': forms.DateInput(format=('%m/%d/%y'),
         attrs={'class':'form-control', 'placeholder':'Select a date', 'type':'date'}),
     }
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = ["content"]
+        widgets = {
+            'content': forms.Textarea(attrs={'placeholder':"Enter your comment here"}),
+        }

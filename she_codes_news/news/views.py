@@ -1,7 +1,7 @@
 from django.views import generic
 from django.urls import reverse_lazy
-from .models import NewsStory
-from .forms import StoryForm
+from .models import NewsStory, Comment
+from .forms import StoryForm, CommentForm
 from django.contrib.auth import get_user_model
 from users.models import CustomUser
 
@@ -19,10 +19,24 @@ class IndexView(generic.ListView):
         context['all_stories'] = NewsStory.objects.all().order_by('-pub_date')
         return context
 
+
 class StoryView(generic.DetailView):
     model = NewsStory
     template_name = 'news/story.html'
     context_object_name = 'story'
+
+
+
+
+class AddCommentView(generic.CreateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'news/addComment.html'
+    success_url = reverse_lazy('news:index')
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        return super().form_valid(form)
+
 
 class AddStoryView(generic.CreateView):
     form_class = StoryForm

@@ -32,7 +32,9 @@ MISCELLANEOUS:
 
 *Add ability to favorite stories
 
-*Add ability to comment on stories
+*Fix ability to comment on stories - error when comment is 'posted'.
+
+* Password change view
 
 *Add ability to search stories via categories/authors/most liked - DROP DOWN SEARCH BAR.
 
