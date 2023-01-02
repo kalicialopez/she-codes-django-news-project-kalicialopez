@@ -13,14 +13,16 @@
     <h4> By: 
     <a href="{% url 'news:authorStories' story.author.id %}">{{ story.author }}</a></h4>
 
-    <a href=" {% url 'news:editStory' story.id %}">Edit Story</a><br/><br/>
+    <a href=" {% url 'news:editStory' story.id %}">Edit Story</a>
+    <br/><br/>
     <a href=" {% url 'news:deleteStory' story.id %}">Delete Story</a>
+    <br/>
     
     <div id="story-content">
         <img src="{{story.image_url}}">
         {{ story.content|linebreaks }}
     </div>
 </div>
-<br/>
+
 
 {% endblock %}

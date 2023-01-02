@@ -9,12 +9,19 @@
 
 {% block content %}
 
+<div id="createAccount-styling">
+<div id="form-container">    
 <h2 class="form-header">Create Account</h2>
 <section class="form-section">  
 
 <form class="form-item" method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
+    <table>
+        {{ form.as_table }}
+    </table>
     <button class="form-button" type="submit">Create Account</button>
 </form>
+
+</div>
+</div>
 {% endblock content %}

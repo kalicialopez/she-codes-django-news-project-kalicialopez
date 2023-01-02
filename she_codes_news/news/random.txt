@@ -1,12 +1,43 @@
-    <!-- <a href="{% url 'news:authorStories' story.author.id %}"> -->
+TO DO LIST
 
-    <div id="AuthorStories">
-    <h2>A snap shot of all recipe's kindly shared by {{ story.author }}</h2>
-    {% if CustomUser.newsstory_set.all %}
-        {% for story in CustomUser.newsstory_set.all %}
-            {% include "news/storyCard.html" with story=story %}
-        {% endfor %}
-    {% else %}
-        <p>No stories are available.</p>
-    % endif %
-</div>
+CSS TO DO:
+*Fix issue with fixed-position header being overlapped by images and background images on webpage. Interestingly, this is not occurring on the edit account page, login and create account page?
+
+*Fix the position of the header on the login and create account pages. (Unsure why this is not being applied to these pages)
+
+*Fix position of h2 tags within pages that contain forms. Currently adjacent to form - tried toggling the margins, and tweaking flex characteristics unsuccessfully
+
+*Change the font of form text
+*Change styling of form borders
+*Change styling of buttons in forms
+
+*Format the text in profile view
+
+*Format the background in all non-form page views - plain background color.
+
+
+
+TAGS TO DO:
+*On individual 'story' pages, figure out how to show the 'edit and delete recipe' links, only if the story has been submitted by the person who is currently logged in. Tried the code below. Error message regarding end block/end if tag which I tried to fix unsuccessfully.
+
+    {% if user.is_authenticated and post.author.id == user.id %}  
+
+*On the 'authorStories page' figure out how to reference the author in the h2 "A snapshot of recipe's shared by ______ ". Make this a link to their 'profile' OR make this author stories page a profile page? 
+
+*On the profile view page, include all the recipe's written by that person and a summary of their 'favorite' recipe's from any/all authors.
+
+
+
+MISCELLANEOUS:
+
+*Add ability to favorite stories
+
+*Add ability to comment on stories
+
+*Add ability to search stories via categories/authors/most liked - DROP DOWN SEARCH BAR.
+
+*Test out delete story page with a dummy story.
+
+
+
+

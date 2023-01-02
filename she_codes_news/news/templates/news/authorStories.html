@@ -9,13 +9,15 @@
 
 {% block content %}
 <div id="AuthorStories">
-    <h2>A snap shot of all recipe's kindly shared by {{ story.author }}</h2>
+<!-- Reference to author of stories not working -->
+    <h2>A snap shot of all recipe's kindly shared by {{ story.author }}</a></h4></h2>
     
     <div id="latest-stories">
         {% if author_stories %} 
         {% for story in author_stories %} 
           {% include "./storyCard.html" with story=story position=forloop.counter %}
-       
+  
+
         {% endfor %} {% else %}
         <p>No stories are available.</p>
         {% endif %}

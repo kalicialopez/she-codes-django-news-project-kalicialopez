@@ -9,7 +9,7 @@
 
 {% block content %}
 
-<div class="profile-wrapper">
+<div id="profile-styling">
     <h2> Welcome back {{ user.username|capfirst }}<h2>
 {% if not user.profile_picture %}   
     <img src = "https://picsum.photo/600" class="profile-card-image">
