@@ -34,7 +34,7 @@ class AddCommentView(generic.CreateView):
     template_name = 'news/addComment.html'
     success_url = reverse_lazy('news:index')
     def form_valid(self, form):
-        form.instance.post_id = self.kwargs['pk']
+        form.instance.story_id = self.kwargs['pk']
         return super().form_valid(form)
 
 

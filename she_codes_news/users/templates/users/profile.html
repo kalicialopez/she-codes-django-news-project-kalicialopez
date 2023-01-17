@@ -11,29 +11,41 @@
 
 <div id="profile-styling">
     <h2> Welcome back {{ user.username|capfirst }}<h2>
-{% if not user.profile_picture %}   
-    <img src = "https://picsum.photo/600" class="profile-card-image">
+
+<p class="profile-text-styling"> Profile Picture:<br/><br/>
+
+    {% if not user.profile_picture %}   
+    <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS5vEjk03D_4txPGs1CdHTLCeXoOj0vIrXsxl0TaD1UMdsiF1boXQK8Uo9maT6p8tVfCo&usqp=CAU" class="profile-card-image">
     {% else %}
     <img src="{{ user.profile_picture }}" class="profile-card-image"/>
     {% endif %} 
+    
 
 
-<p> Profile Picture: <a href="{% url 'users:profile' request.user.id %}">{{ user.profile_picture }}</a></p>
-<p> First name: {{ user.first_name }}</p>
-<p> Last name: {{ user.last_name }}</p>
-<p> Email: <a href="{% url 'users:profile' request.user.id %}">{{ user.email }}</a></p>
-<p> Bio: <a href="{% url 'users:profile' request.user.id %}">{{ user.bio }}</a></p>
-<p> Date joined: {{ user.date_joined }}</p>
+    First name: {{ user.first_name }} <br/>
+    Last name: {{ user.last_name }} <br/>
+    Email: <a href="{% url 'users:profile' request.user.id %}">{{ user.email }}</a><br/>
+    Bio: <a href="{% url 'users:profile' request.user.id %}">{{ user.bio }}</a><br/>
+    Date joined: {{ user.date_joined }}<br/>
+</p>
 
 </div>
 
-<!-- THIS IS NOT WORKING! - TO LIST ALL THE STORIES MADE BY THAT PARTICULAR USER. -->
-<ul>
-{% for story in CustomUser.story_set.all %}
-    <li>{{ story.title }}</li>
-{% endfor %}
-</ul>
+<!-- LIST ALL THE STORIES MADE BY THAT PARTICULAR USER. -->
+<div class="author_stories">
+    <h3 id="author-story"><br>Here are all the stories written by you. </h3>
+<!--{% if profile %}-->
+    <ol>
+        {% for story in profile.newsstory_set.all %}
+        <!-- <li>{{ story.title }}</li> -->
+        <li><a href="{% url 'news:story' story.id %}"> {{ story.title }}</a></li><br>
+    {% endfor %}
+    </ol>
 
+    {% else %}
+        <p> No stories are available {{user.username}}</p>
+    {% endif %}
+</div>
 
 {% endblock %}
 

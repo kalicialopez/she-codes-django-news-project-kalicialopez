@@ -26,25 +26,6 @@
     </div>
 </div>
 
-<!-- <div id="comment-wrapper">
-    <h2>Comments</h2>
-    {% if request.user.is_authenticated %}
-    <form method="POST" action="{% url 'news:addComment' story.id %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input class="submit-button" type="submit" value="Add comment">
-    </form>
-    {% endif %}
-
-    {% if story.comments.count %}
-        {% for comment in story.comments.all %}
-            {% include "./commentCard.html" with comment=comment %}
-        {% endfor %}
-    {% else %}
-    <p>No comments yet.</p>
-    {% endif %}
-</div> -->
-
 
 <h3>Comments</h3>
 {% if not story.comments.all %}

@@ -23,6 +23,8 @@ header {
     top: 0;
     width: 100%;
     color: #ffffff;
+    background: #ffffff;
+    z-index: 4
 
 }
 main {
@@ -91,6 +93,10 @@ a, p {
     font-family: 'Trebuchet MS'
 }
 
+.profile-text-styling {
+    font-size: 20px;
+}
+
 #index-h2 {
     color: #ffffff;
     margin: 0 0 5px 20px;
@@ -107,6 +113,11 @@ a, p {
     transform: translateX(0%);
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+#profile-styling {
+    display: flex;
+    justify-content: center;
 }
 
 
