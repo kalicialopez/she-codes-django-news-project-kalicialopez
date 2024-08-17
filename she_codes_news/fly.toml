@@ -19,7 +19,7 @@
 #   cpu_kind = 'shared'
 #   cpus = 1
 
-app = "YOUR-APP-NAME"
+app = "she-codes-news"
 primary_region = "syd"
 console_command = "/code/manage.py shell"
 kill_signal = "SIGINT"
